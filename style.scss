@@ -1,3 +1,88 @@
-h1 {
-   color: goldenrod;
+$header-nav: white;
+$header-footer: blue;
+
+
+* 
+{
+   font-family: Arial;
+}
+
+
+
+body{
+   margin: 0px;
+}
+
+section {
+   border-bottom: 1px black solid;
+   padding: 1vw;
+}
+
+header {
+   position: sticky;
+   display: flex;
+   background-color: $header-footer;
+   padding: 1vw;
+   color: $header-nav; 
+   top: 0;
+   p{
+      width: 20%;
+   }
+   a{ 
+      color: $header-nav;
+      text-decoration: none;
+   }
+   nav{
+      width: 80%;
+      ol,ul{
+         list-style:none;
+         display: flex;
+         color: $header-nav;
+         justify-content: space-around;
+         
+      }
+   }
+}
+
+.gridlike{
+   display: grid;
+   grid-template-columns:  32%   32%   32%;
+   justify-content: space-between;
+   div{
+      padding: 10px;
+      border: .1px solid grey;
+      border-radius: 15px;
+      img{
+         height: 50%;
+         width: 50%;
+      }
+   }
+   
+}
+
+.opening {
+   img{
+      max-width: 100%;
+   }
+}
+
+.form {
+   display: grid;
+   grid-template-rows: auto;
+   
+   width: 50%;
+   row-gap: 10px;
+   button {
+      width: 10%;
+   }
+}
+
+footer {
+   background-color: $header-footer;
+   padding: 1vw;
+   color: $header-nav; 
+   a{
+      color: $header-nav;
+      text-decoration: none;
+   }
 }

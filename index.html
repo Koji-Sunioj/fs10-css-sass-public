@@ -18,6 +18,97 @@
     <title>Portfolio</title>
   </head>
   <body>
-    <h1>Welcome to CSS assignment!</h1>
+    <header >
+      <p><a href="index.html">El Niño 	&copy;</a></p>
+      <nav >
+        <ul >
+          <li><a href="#opening">Opening</a></li>
+          <li><a href="#services-header">Services</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </nav>  
+    </header>
+    <main>
+      <section class="opening">
+        <h1 id="opening">Welcome to the website</h1>
+        <p>Stay for awhile. You might like it.</p>
+        <img src="assets/images/header.svg" alt="header photo">
+      </section>
+     
+      <section >
+        <h2 id="services-header">Services</h2>
+        <div class="gridlike">
+          <div>
+            <p id="cool-services">Sometimes we do cool things. If you like cool things, click on "Read More".</p>
+            <button aria-labelledby="services-header cool-services">Read More</button>
+          </div>
+          <div>
+            <p id="awesome-services">Awesome things are our specialty. If you like awesome things, click on "Reader More".</p>
+          <button aria-labelledby="services-header awesome-services">Read More</button>
+          </div>
+          <div>
+            <p id="loco-services">We also get loco too. Click "Read More" below if you also wanna get loco!</p>
+          <button aria-labelledby="services-header loco-services">Read More</button>
+          </div>
+        </div>
+
+        
+      </section>
+     
+      <section>
+        <h2 id="tech-stack">Tech Stack</h3>
+        <p>This is the tech stack we use.</p>
+        <ul>
+          <li>MongoDB</li>
+          <li>Express.js</li>
+          <li>React.js</li>
+          <li>Node.js</li>
+        </ul>
+        <p>We are #agile #iterators.</p>
+      </section>
+   
+      <section>
+        <h2 id="blogs">Blogs</h2>
+        <div class="gridlike"> 
+
+          <div>
+            <img src="assets/images/img-1.jpg" alt="dark mysterious keyboard">
+            <p id="dark-keyboards">Sometimes dark keyboards are cool. Here I explain why I think they are cool.</p> 
+            <button style="display: block;" aria-labelledby="blogs dark-keyboards">Read More</button>
+          </div>
+          <div> 
+            <img src="assets/images/img-2.jpg" alt="random code" >
+            <p id="random-code">There is a laptop with random code on a clean table, with some fake Ikea plant. </p>
+            <button style="display: block;" aria-labelledby="blogs random-code">Read More</button>
+          </div>
+          <div> 
+            <img src="assets/images/img-3.jpg" alt="writing utensils" >
+            <p id="writing-utensils">A photo of some writing utensils, notebook and a laptop.</p>
+            <button style="display: block;" aria-labelledby="blogs writing-utensils">Read More</button>
+          </div>
+        </div>
+        
+      </section>
+     
+      <section> 
+        <h2 id="feedback">Feedback</h2>
+        <p>Got something on your mind? Well don't keep it to yourself stranger. Send it our way!</p>
+        <form class="form">
+            <label for="the-name" id="name-label">Your name please: </label>
+            <input type='text' id="the-name" name="name">  
+            <label for="the-feedback" id="concern-label" >Your concerns:</label>
+            <textarea id="the-feedback" name="concerns">  </textarea>
+            <button aria-labelledby="feedback name-label concern-label">Submit</button>
+        </form>
+      </section>
+    </main>
+  
+    <footer>
+      <p>... it means, the Niño</p>
+      <p class="">Author: Koji Inoue</p>
+      <p><a href="mailto:koji.gabriel218@gmail.com">koji.gabriel218@gmail.com</a> </p>
+    </footer>
   </body>
 </html>

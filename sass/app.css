@@ -1,0 +1,164 @@
+/*
+CSS Reset are group of css styles rules to to be applied to its browser default values.
+Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+*/
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+section {
+  border-bottom: 1px black solid;
+  padding: 10px;
+}
+
+#pointer {
+  width: 50px;
+  height: 50px;
+  border-bottom: 10px solid blue;
+  border-left: 10px solid blue;
+  transform: rotate(-45deg);
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    left: 49%;
+    top: 0px;
+  }
+  100% {
+    left: 49%;
+    top: 200px;
+  }
+}
+.header {
+  position: sticky;
+  display: flex;
+  top: 0;
+  background-color: blue;
+  padding: 5px;
+  color: white;
+}
+.header .logo {
+  width: 20%;
+}
+@media screen and (max-width: 600px) {
+  .header .hidable {
+    display: none;
+    width: 0%;
+  }
+  .header .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.header a {
+  color: white;
+  text-decoration: none;
+}
+.header nav {
+  width: 80%;
+}
+.header nav ol, .header nav ul {
+  list-style: none;
+  display: flex;
+  color: white;
+  justify-content: space-around;
+}
+
+.opening img {
+  max-width: 100%;
+}
+
+.footer {
+  background-color: blue;
+  padding: 5px;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .footer .hidable {
+    display: none;
+    width: 0%;
+  }
+  .footer .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.gridlike {
+  display: grid;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .gridlike {
+    grid-template-rows: 32% 32% 32%;
+    row-gap: 10px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .gridlike {
+    grid-template-columns: 32% 32% 32%;
+  }
+}
+.gridlike article {
+  padding: 10px;
+  border: 0.1px solid grey;
+  border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+  .gridlike article img {
+    height: 30vw;
+    width: 40vw;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .gridlike article img {
+    height: 15vw;
+    width: 20vw;
+  }
+}
+
+.form {
+  display: grid;
+  row-gap: 10px;
+}
+@media screen and (max-width: 600px) {
+  .form {
+    grid-template-columns: 100%;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .form {
+    grid-template-columns: 50%;
+    justify-content: left;
+  }
+}
+.form input[name=name] {
+  width: 50%;
+}
+.form button {
+  width: 30%;
+}
+
+/*
+Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+Layout: contains all the CSS that handles the layout, such as the container and any grid systems.
+Components: anything reusable such as buttons, navbars, cards etc.
+Main: it should ONLY contain the imports for the above files.
+*/
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,100 @@
+/*
+CSS Reset are group of css styles rules to to be applied to its browser default values.
+Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+*/
+
+$header-nav: white;
+$header-footer: blue;
+
+* 
+{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    margin: 0px;
+    
+ }
+
+
+section {
+    border-bottom: 1px black solid;
+    padding: 10px;
+ }
+
+@mixin footer_or_header_anchor{ 
+    color: $header-nav;
+    text-decoration: none;
+ }
+
+ @mixin footer_or_header {
+    background-color: $header-footer;
+    padding: 5px;
+    color: $header-nav; 
+ }
+
+@mixin footer_or_header_hidden {  
+    @media screen and (max-width: 600px){
+        .hidable {
+            display: none;
+            width: 0%;  
+        }
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@mixin formfocus {  
+
+    @media screen and (max-width: 600px){
+
+        grid-template-columns: 100%;
+        justify-content: center;
+    }
+    @media only screen and (min-width: 600px) 
+    {
+        grid-template-columns: 50%;
+        justify-content: left;
+    }
+
+}
+
+
+@mixin gridflip {
+    @media screen and (max-width: 600px)
+    { 
+        grid-template-rows:  32%   32%   32%;
+        row-gap: 10px;
+    }
+
+    @media only screen and (min-width: 600px) 
+    {
+        grid-template-columns:  32%   32%   32%;
+    }
+}
+
+@mixin  gridimg {
+
+    @media screen and (max-width: 600px)
+    { 
+        img{
+            height: 30vw;
+            width: 40vw;
+            
+         }
+    }
+
+    @media only screen and (min-width: 600px) 
+    {
+        img{
+            height: 15vw;
+            width: 20vw;
+            
+         }
+    }
+    
+}

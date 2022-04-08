@@ -14,13 +14,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="./sass/app.css" />
     <title>Portfolio</title>
   </head>
   <body>
-    <header >
-      <p><a href="index.html">El Niño 	&copy;</a></p>
-      <nav >
+    <header class="header" >
+      <p class="logo"><a href="index.html">El Niño &copy;</a></p>
+      <nav class="hidable">
         <ul >
           <li><a href="#opening">Opening</a></li>
           <li><a href="#services-header">Services</a></li>
@@ -35,28 +35,32 @@
         <h1 id="opening">Welcome to the website</h1>
         <p>Stay for awhile. You might like it.</p>
         <img src="assets/images/header.svg" alt="header photo">
+        <div id="pointer">
+          
+        </div>
       </section>
-     
+      
+      <i class="arrow down"></i>
       <section >
         <h2 id="services-header">Services</h2>
         <div class="gridlike">
-          <div>
+          <article>
+            <h3>Cool things</h3>
             <p id="cool-services">Sometimes we do cool things. If you like cool things, click on "Read More".</p>
             <button aria-labelledby="services-header cool-services">Read More</button>
-          </div>
-          <div>
+          </article>
+          <article>
+            <h3>Awesome things</h3>
             <p id="awesome-services">Awesome things are our specialty. If you like awesome things, click on "Reader More".</p>
-          <button aria-labelledby="services-header awesome-services">Read More</button>
-          </div>
-          <div>
+            <button aria-labelledby="services-header awesome-services">Read More</button>
+          </article>
+          <article>
+            <h3>Loco things</h3>
             <p id="loco-services">We also get loco too. Click "Read More" below if you also wanna get loco!</p>
-          <button aria-labelledby="services-header loco-services">Read More</button>
-          </div>
+            <button aria-labelledby="services-header loco-services">Read More</button>
+          </article>
         </div>
-
-        
       </section>
-     
       <section>
         <h2 id="tech-stack">Tech Stack</h3>
         <p>This is the tech stack we use.</p>
@@ -72,22 +76,27 @@
       <section>
         <h2 id="blogs">Blogs</h2>
         <div class="gridlike"> 
-
-          <div>
+          <article>
+            <h3>Dark Keyboards</h3>
             <img src="assets/images/img-1.jpg" alt="dark mysterious keyboard">
             <p id="dark-keyboards">Sometimes dark keyboards are cool. Here I explain why I think they are cool.</p> 
-            <button style="display: block;" aria-labelledby="blogs dark-keyboards">Read More</button>
-          </div>
-          <div> 
+            <button  aria-labelledby="blogs dark-keyboards">Read More</button>
+          </article>
+          <article> 
+            <h3>Random Code</h3>
             <img src="assets/images/img-2.jpg" alt="random code" >
             <p id="random-code">There is a laptop with random code on a clean table, with some fake Ikea plant. </p>
-            <button style="display: block;" aria-labelledby="blogs random-code">Read More</button>
-          </div>
-          <div> 
-            <img src="assets/images/img-3.jpg" alt="writing utensils" >
-            <p id="writing-utensils">A photo of some writing utensils, notebook and a laptop.</p>
-            <button style="display: block;" aria-labelledby="blogs writing-utensils">Read More</button>
-          </div>
+            
+            <button  aria-labelledby="blogs random-code">Read More</button>
+          </article>
+          <article>
+            
+              <h3>Writing Utensils</h3>
+              <img src="assets/images/img-3.jpg" alt="writing utensils" >
+              <p id="writing-utensils">A photo of some writing utensils, notebook and a laptop.</p>
+           
+            <button aria-labelledby="blogs writing-utensils">Read More</button>
+          </article>
         </div>
         
       </section>
@@ -99,16 +108,18 @@
             <label for="the-name" id="name-label">Your name please: </label>
             <input type='text' id="the-name" name="name">  
             <label for="the-feedback" id="concern-label" >Your concerns:</label>
-            <textarea id="the-feedback" name="concerns">  </textarea>
+            <textarea id="the-feedback" name="concerns" rows="10">  </textarea>
             <button aria-labelledby="feedback name-label concern-label">Submit</button>
         </form>
       </section>
     </main>
   
-    <footer>
-      <p>... it means, the Niño</p>
-      <p class="">Author: Koji Inoue</p>
-      <p><a href="mailto:koji.gabriel218@gmail.com">koji.gabriel218@gmail.com</a> </p>
+    <footer class="footer">
+      <p class="logo">... it means, the Niño</p>
+      <div class="hidable">
+        <p>Author: Koji Inoue</p>
+        <p><a href="mailto:koji.gabriel218@gmail.com">koji.gabriel218@gmail.com</a> </p>
+      </div>
     </footer>
   </body>
 </html>

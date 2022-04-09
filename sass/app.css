@@ -16,8 +16,15 @@ section {
 }
 
 #pointer {
-  width: 50px;
-  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#arrow {
+  align-self: center;
+  width: 30px;
+  height: 30px;
   border-bottom: 10px solid blue;
   border-left: 10px solid blue;
   transform: rotate(-45deg);
@@ -29,11 +36,9 @@ section {
 
 @keyframes example {
   0% {
-    left: 49%;
     top: 0px;
   }
   100% {
-    left: 49%;
     top: 200px;
   }
 }
@@ -73,8 +78,66 @@ section {
   justify-content: space-around;
 }
 
-.opening img {
-  max-width: 100%;
+#animation svg {
+  height: 100%;
+  width: 100%;
+}
+#animation #line1 {
+  animation: line1 2s ease-in infinite;
+  animation-delay: 1s;
+}
+#animation #line2 {
+  animation: line1 1s ease-in infinite;
+  animation-delay: 2s;
+}
+#animation #line3 {
+  animation: line1 3s ease-in infinite;
+  animation-delay: 3s;
+}
+#animation #lefthand {
+  animation: movehand infinite alternate 1s;
+}
+#animation #foot {
+  transform-origin: right;
+  transform-box: fill-box;
+  animation: movefoot infinite alternate 2s;
+}
+#animation #righthand {
+  transform-origin: right;
+  transform-box: fill-box;
+  animation: clickhand infinite alternate 0.8s;
+}
+@keyframes movefoot {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes movehand {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(5px) translateY(0px);
+  }
+}
+@keyframes clickhand {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes line1 {
+  from {
+    fill: white;
+  }
+  to {
+    fill: #A9A9A9;
+  }
 }
 
 .footer {
@@ -117,18 +180,24 @@ section {
   padding: 10px;
   border: 0.1px solid grey;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 @media screen and (max-width: 600px) {
-  .gridlike article img {
+  .gridlike article .content img {
     height: 30vw;
     width: 40vw;
   }
 }
 @media only screen and (min-width: 600px) {
-  .gridlike article img {
+  .gridlike article .content img {
     height: 15vw;
     width: 20vw;
   }
+}
+.gridlike article .redirect {
+  margin-top: auto;
 }
 
 .form {

@@ -1,172 +1,90 @@
 
+/*
+components in the scope of this little project, for me is mainly the animation objects
+since no specific appearance is given to single elements which are systematically reused
+*/
 
+//pointer is the div which holds the arrow pointing down, centering it
+//arrow is the id for the arrow itself which is animated
 #pointer
-{  display: flex;
+{  
+   display: flex;
    flex-direction: row;
    justify-content: center;
-   
- }
 
-#arrow
- {  align-self: center;
-    width: 30px;
-    height: 30px;
-    border-bottom:10px solid blue;
-    border-left: 10px solid blue;
-    transform: rotate(-45deg);
-    position: relative;
-    animation-name: example;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
+   #arrow {  
+      align-self: center;
+      width: 30px;
+      height: 30px;
+      border-bottom:10px solid blue;
+      border-left: 10px solid blue;
+      transform: rotate(-45deg);
+      position: relative;
+      animation-name: pointdown;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+   }
   
-  @keyframes example {
-    0%   {top:0px;}
-    100%  { top:200px;}
-  }
-  
+   @keyframes pointdown {
+      0%   {top:0px;}
+      100%  { top:200px;}
+   }
+}
 
-.header {
-    position: sticky;
-    display: flex;
-    top: 0;
-    @include footer_or_header;
-    .logo{
-        width: 20%;
-     }
-    @include footer_or_header_hidden;
-    a{ 
-        @include footer_or_header_anchor;
-    }
-    nav{
-        width: 80%;
-        ol,ul{
-          list-style:none;
-          display: flex;
-          color: $header-nav;
-          justify-content: space-around;
-       }
-    }
- }
+//animation is the div with the svg element
+//there are four specific animations, of which one
+//has three permutations (line1,line2,line3)...
+#animation {
+   @include animationfix;
+   #line1 {
+      animation: line  2s  ease-in infinite;
+      animation-delay: 1s;
+   }
+   #line2 {
+      animation: line  1s  ease-in infinite;
+      animation-delay: 2s;
+   }
+   #line3 {
+      animation: line  3s  ease-in infinite;
+      animation-delay: 3s;
+   }
 
+   @keyframes line {
+      from  {fill:white; }
+      to {fill: #A9A9A9;}
+   }
 
- #animation {
-       svg{
-          height: 100%;
-          width: 100%;
-       }
-       #line1 {
-         animation: line1  2s  ease-in infinite;
-         animation-delay: 1s;
-       }
-       #line2 {
-         animation: line1  1s  ease-in infinite;
-         animation-delay: 2s;
-       }
-       #line3 {
-         animation: line1  3s  ease-in infinite;
-         animation-delay: 3s;
-       }
-
-       #lefthand {
-         animation: movehand infinite alternate 1s
-       }
-
-       #foot {
-         transform-origin: right;
-         transform-box: fill-box;
-         animation: movefoot infinite alternate 2s
-       }
-       #righthand {
+   #righthand {
          transform-origin: right;
          transform-box: fill-box;
          animation: clickhand infinite alternate .8s
+   }
 
-       }
+   @keyframes clickhand {
+      0%{transform: rotate(-5deg);}
+      100%{ transform: rotate(10deg);}
+    }
 
-       @keyframes movefoot {
-          
-         0%{
-            transform: rotate(-5deg);
-           
-         }
-         100%{
-            transform: rotate(10deg);
-         }
-       }
+   #lefthand {
+      animation: movehand infinite alternate 1s
+   }
 
-       @keyframes movehand {
-          
-         0%{
-            transform: translateX(0px) translateY(0px);
-           
-         }
-         100%{
-            transform: translateX(5px) translateY(0px);
-         }
-       }
+   @keyframes movehand {
+      0%{transform: translateX(0px) translateY(0px);}
+      100%{transform: translateX(5px) translateY(0px);}
+    }
 
-       @keyframes clickhand {
-          
-         0%{
-            transform: rotate(-5deg);
-           
-         }
-         100%{
-            transform: rotate(10deg);
-         }
-       }
+   #foot {
+      transform-origin: right;
+      transform-box: fill-box;
+      animation: movefoot infinite alternate 2s
+   }
        
-       @keyframes line1 {
-         from  {fill:white; }
-         to {fill: #A9A9A9;}
-      }
-      
- }
+   @keyframes movefoot {
+      0%{transform: rotate(-5deg);}
+      100%{transform: rotate(10deg);}
+   }
+}
 
  
 
- .footer {
-    @include footer_or_header;
-    @include footer_or_header_hidden;
-    a{
-        @include footer_or_header_anchor;
-    }
- }
-
-
-.gridlike{
-    display: grid;
-    @include gridflip;
-    justify-content: space-between;
-    article{
-      padding: 10px;
-      border: .1px solid grey;
-      border-radius: 5px; 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      .content{
-         @include gridimg;
-      }
-      .redirect {
-         margin-top: auto;
-       }     
-    }  
- }
- 
-
- 
- .form {
-    display: grid;
-    @include formfocus;
-    input[name="name"] {
-        width: 50%;
-     }
-    row-gap: 10px;
-    button {
-       width: 30%;
-    }
- }
- 
- 

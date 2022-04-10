@@ -1,39 +1,55 @@
 /*
-CSS Reset are group of css styles rules to to be applied to its browser default values.
-Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+here contains 
+1.all elements (not class or id ) whose values are altered from their default attributes 
+2.variables which are exported and reused in other scss files
+3.mixins, which include media queries
 */
 
+// nav and footer appearance (background and element color)
 $header-nav: white;
 $header-footer: blue;
 
+//reset for offsetting the position of a section when the nav link is clicked on
+//without this the sticky nav will hover over the navigated element
+:target::before {
+    content: "";
+    display: block;
+    height: 60px; 
+    margin: -60px 0 0; 
+  }
+
+//setting font family and fallbacks
 * 
 {
    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-body{
+//resets here for body and sections: 
+body {
     margin: 0px;
-    
- }
-
+}
 
 section {
     border-bottom: 1px black solid;
     padding: 10px;
  }
 
+
+//mixins which are used elsewhere, includes media queries
+//no link decoration for anchor tags in nav section
 @mixin footer_or_header_anchor{ 
     color: $header-nav;
     text-decoration: none;
  }
 
- @mixin footer_or_header {
+//color elements and padding for footer or header children
+@mixin footer_or_header {
     background-color: $header-footer;
     padding: 5px;
     color: $header-nav; 
- }
+}
 
+//make nav or element hidden on screen size, logo width 100%
 @mixin footer_or_header_hidden {  
     @media screen and (max-width: 600px){
         .hidable {
@@ -48,10 +64,9 @@ section {
     }
 }
 
+//change appearance of feedback form width depending on size of screen
 @mixin formfocus {  
-
     @media screen and (max-width: 600px){
-
         grid-template-columns: 100%;
         justify-content: center;
     }
@@ -60,25 +75,23 @@ section {
         grid-template-columns: 50%;
         justify-content: left;
     }
-
 }
 
-
+//change appearance of "posts" to be column or row depending on size of screen
 @mixin gridflip {
     @media screen and (max-width: 600px)
     { 
         grid-template-rows:  32%   32%   32%;
         row-gap: 10px;
     }
-
     @media only screen and (min-width: 600px) 
     {
         grid-template-columns:  32%   32%   32%;
     }
 }
 
+//change appearance of image width, height depending on screen size
 @mixin  gridimg {
-
     @media screen and (max-width: 600px)
     { 
         img{
@@ -87,14 +100,29 @@ section {
             
          }
     }
-
     @media only screen and (min-width: 600px) 
     {
         img{
             height: 15vw;
             width: 20vw;
-            
          }
     }
-    
+}
+
+//this changes the width of the svg element depending on screen size
+@mixin  animationfix {
+    @media screen and (max-width: 600px)
+    { 
+        svg{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 600px) 
+    {
+        svg{
+            height: 50%;
+            width: 50%;
+        }
+    }
 }

@@ -1,0 +1,81 @@
+/*
+layout considering display layout, mainly applys to the .header, .footer sections
+.gridlike is for any posts which are multiple and have a blog appearance (such as in services or blogs section)
+this include a responsive layout for small and large screen displays
+.form is for the feedback form
+*/
+
+//header class manipulates appearance of anchor tags in nav section
+//is hidden on screen size
+.header {
+    position: sticky;
+    display: flex;
+    top: 0;
+    @include footer_or_header;
+    .logo{
+        width: 20%;
+     }
+    @include footer_or_header_hidden;
+    a{ 
+        @include footer_or_header_anchor;
+    }
+    nav{
+        width: 80%;
+        ol,ul{
+          list-style:none;
+          display: flex;
+          color: $header-nav;
+          justify-content: space-around;
+       }
+    }
+ }
+
+//footer has same appearance (color) as header, and also has hidable elements
+.footer {
+    @include footer_or_header;
+    @include footer_or_header_hidden;
+    a{
+        @include footer_or_header_anchor;
+    }
+}
+
+//gridlike class, means that each article appears in a column or row depending 
+//on screen size. each article has a .redirect section which is aligned
+//the elements of each grid item, appears as flex for proper alignment
+//towards the bottom of it's parent element
+.gridlike{
+    display: grid;
+    @include gridflip;
+    justify-content: space-between;
+    article{
+      padding: 10px;
+      border: .1px solid grey;
+      border-radius: 5px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      .content{
+         @include gridimg;
+      }
+      .redirect {
+         margin-top: auto;
+       }     
+    }  
+ }
+ 
+
+ //the feedback form takes on a grid appearance
+ //its width depends on screen size
+.form {
+    display: grid;
+    @include formfocus;
+    input[name="name"] {
+        width: 50%;
+     }
+    row-gap: 10px;
+    button {
+       width: 30%;
+    }
+}
+ 
+ 

@@ -36,14 +36,27 @@ section {
 
 @mixin footer_or_header_hidden {  
     @media screen and (max-width: 600px){
-        .hidable {
-            display: none;
-            width: 0%;  
-        }
         &__logo {
             width: 100%;
             display: flex;
             justify-content: center;
+        }
+        
+        &__nav {
+            display: none;
+            width: 0%;  
+        }
+        
+    }
+
+    @media screen and (min-width: 600px){
+        &__logo{
+            width: 20%;
+        }
+        
+        &__nav {
+            display: block;
+            width: 80%;  
         }
     }
 }

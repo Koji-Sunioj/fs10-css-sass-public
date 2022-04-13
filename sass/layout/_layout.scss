@@ -4,15 +4,11 @@
     display: flex;
     top: 0;
     @include footer_or_header;
-    &__logo{
-        width: 20%;
-     }
     @include footer_or_header_hidden;
     a{ 
         @include footer_or_header_anchor;
     }
     nav{
-        width: 80%;
         ol,ul{
           list-style:none;
           display: flex;

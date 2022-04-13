@@ -4,7 +4,7 @@
     display: flex;
     top: 0;
     @include footer_or_header;
-    .logo{
+    &__logo{
         width: 20%;
      }
     @include footer_or_header_hidden;

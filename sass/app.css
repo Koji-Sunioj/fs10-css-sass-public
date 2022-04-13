@@ -73,7 +73,7 @@ section {
     fill: white;
   }
   to {
-    fill: #A9A9A9;
+    fill: #a9a9a9;
   }
 }
 #animation #righthand {
@@ -146,11 +146,27 @@ section {
   color: white;
   text-decoration: none;
 }
-.header nav ol, .header nav ul {
+.header nav ol,
+.header nav ul {
   list-style: none;
   display: flex;
   color: white;
   justify-content: space-around;
+}
+
+.opening {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 600px) {
+  .opening__text-element {
+    align-self: center;
+  }
+}
+@media screen and (min-width: 600px) {
+  .opening__text-element {
+    align-self: auto;
+  }
 }
 
 .footer {

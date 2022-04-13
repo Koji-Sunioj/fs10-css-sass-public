@@ -1,61 +1,65 @@
-
 .header {
-    position: sticky;
-    display: flex;
-    top: 0;
-    @include footer_or_header;
-    @include footer_or_header_hidden;
-    a{ 
-        @include footer_or_header_anchor;
+  position: sticky;
+  display: flex;
+  top: 0;
+  @include footer_or_header;
+  @include footer_or_header_hidden;
+  a {
+    @include footer_or_header_anchor;
+  }
+  nav {
+    ol,
+    ul {
+      list-style: none;
+      display: flex;
+      color: $header-nav;
+      justify-content: space-around;
     }
-    nav{
-        ol,ul{
-          list-style:none;
-          display: flex;
-          color: $header-nav;
-          justify-content: space-around;
-       }
-    }
- }
+  }
+}
+
+.opening {
+  display: flex;
+  flex-direction: column;
+  @include opening_width;
+}
 
 .footer {
-    @include footer_or_header;
-    @include footer_or_header_hidden;
-    a{
-        @include footer_or_header_anchor;
-    }
+  @include footer_or_header;
+  @include footer_or_header_hidden;
+  a {
+    @include footer_or_header_anchor;
+  }
 }
 
-.gridlike{
-    display: grid;
-    @include gridflip;
-    justify-content: space-between;
-    article{
-      padding: 10px;
-      border: .1px solid grey;
-      border-radius: 5px; 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      .content{
-         @include gridimg;
-      }
-      .redirect {
-         margin-top: auto;
-       }     
-    }  
- }
- 
-.form {
-    display: grid;
-    @include formfocus;
-    input[name="name"] {
-        width: 50%;
-     }
-    row-gap: 10px;
-    button {
-       width: 30%;
+.gridlike {
+  display: grid;
+  @include gridflip;
+  justify-content: space-between;
+  article {
+    padding: 10px;
+    border: 0.1px solid grey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .content {
+      @include gridimg;
     }
+    .redirect {
+      margin-top: auto;
+    }
+  }
 }
- 
- 
+
+.form {
+  display: grid;
+  @include formfocus;
+  input[name="name"] {
+    width: 50%;
+  }
+  row-gap: 10px;
+  button {
+    width: 30%;
+  }
+}

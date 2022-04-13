@@ -1,16 +1,7 @@
-/*
-here contains 
-1.all elements (not class or id ) whose values are altered from their default attributes 
-2.variables which are exported and reused in other scss files
-3.mixins, which include media queries
-*/
 
-// nav and footer appearance (background and element color)
 $header-nav: white;
 $header-footer: blue;
 
-//reset for offsetting the position of a section when the nav link is clicked on
-//without this the sticky nav will hover over the navigated element
 :target::before {
     content: "";
     display: block;
@@ -18,13 +9,11 @@ $header-footer: blue;
     margin: -60px 0 0; 
   }
 
-//setting font family and fallbacks
 * 
 {
    font-family: Arial, Helvetica, sans-serif;
 }
 
-//resets here for body and sections: 
 body {
     margin: 0px;
 }
@@ -34,22 +23,17 @@ section {
     padding: 10px;
  }
 
-
-//mixins which are used elsewhere, includes media queries
-//no link decoration for anchor tags in nav section
 @mixin footer_or_header_anchor{ 
     color: $header-nav;
     text-decoration: none;
  }
 
-//color elements and padding for footer or header children
 @mixin footer_or_header {
     background-color: $header-footer;
     padding: 5px;
     color: $header-nav; 
 }
 
-//make nav or element hidden on screen size, logo width 100%
 @mixin footer_or_header_hidden {  
     @media screen and (max-width: 600px){
         .hidable {
@@ -64,7 +48,6 @@ section {
     }
 }
 
-//change appearance of feedback form width depending on size of screen
 @mixin formfocus {  
     @media screen and (max-width: 600px){
         grid-template-columns: 100%;
@@ -77,7 +60,6 @@ section {
     }
 }
 
-//change appearance of "posts" to be column or row depending on size of screen
 @mixin gridflip {
     @media screen and (max-width: 600px)
     { 
@@ -90,7 +72,6 @@ section {
     }
 }
 
-//change appearance of image width, height depending on screen size
 @mixin  gridimg {
     @media screen and (max-width: 600px)
     { 
@@ -109,7 +90,6 @@ section {
     }
 }
 
-//this changes the width of the svg element depending on screen size
 @mixin  animationfix {
     @media screen and (max-width: 600px)
     { 

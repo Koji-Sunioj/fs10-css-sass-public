@@ -1,11 +1,4 @@
 
-/*
-components in the scope of this little project, for me is mainly the animation objects
-since no specific appearance is given to single elements which are systematically reused
-*/
-
-//pointer is the div which holds the arrow pointing down, centering it
-//arrow is the id for the arrow itself which is animated
 #pointer
 {  
    display: flex;
@@ -31,9 +24,6 @@ since no specific appearance is given to single elements which are systematicall
    }
 }
 
-//animation is the div with the svg element
-//there are four specific animations, of which one
-//has three permutations (line1,line2,line3)...
 #animation {
    @include animationfix;
    #line1 {
@@ -50,7 +40,7 @@ since no specific appearance is given to single elements which are systematicall
    }
 
    @keyframes line {
-      from  {fill:white; }
+      from  {fill:white;}
       to {fill: #A9A9A9;}
    }
 

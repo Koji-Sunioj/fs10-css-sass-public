@@ -1,12 +1,4 @@
-/*
-layout considering display layout, mainly applys to the .header, .footer sections
-.gridlike is for any posts which are multiple and have a blog appearance (such as in services or blogs section)
-this include a responsive layout for small and large screen displays
-.form is for the feedback form
-*/
 
-//header class manipulates appearance of anchor tags in nav section
-//is hidden on screen size
 .header {
     position: sticky;
     display: flex;
@@ -30,7 +22,6 @@ this include a responsive layout for small and large screen displays
     }
  }
 
-//footer has same appearance (color) as header, and also has hidable elements
 .footer {
     @include footer_or_header;
     @include footer_or_header_hidden;
@@ -39,10 +30,6 @@ this include a responsive layout for small and large screen displays
     }
 }
 
-//gridlike class, means that each article appears in a column or row depending 
-//on screen size. each article has a .redirect section which is aligned
-//the elements of each grid item, appears as flex for proper alignment
-//towards the bottom of it's parent element
 .gridlike{
     display: grid;
     @include gridflip;
@@ -63,9 +50,6 @@ this include a responsive layout for small and large screen displays
     }  
  }
  
-
- //the feedback form takes on a grid appearance
- //its width depends on screen size
 .form {
     display: grid;
     @include formfocus;

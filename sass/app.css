@@ -1,9 +1,3 @@
-/*
-here contains 
-1.all elements (not class or id ) whose values are altered from their default attributes 
-2.variables which are exported and reused in other scss files
-3.mixins, which include media queries
-*/
 :target::before {
   content: "";
   display: block;
@@ -24,10 +18,6 @@ section {
   padding: 10px;
 }
 
-/*
-components in the scope of this little project, for me is mainly the animation objects
-since no specific appearance is given to single elements which are systematically reused
-*/
 #pointer {
   display: flex;
   flex-direction: row;
@@ -124,12 +114,6 @@ since no specific appearance is given to single elements which are systematicall
   }
 }
 
-/*
-layout considering display layout, mainly applys to the .header, .footer sections
-.gridlike is for any posts which are multiple and have a blog appearance (such as in services or blogs section)
-this include a responsive layout for small and large screen displays
-.form is for the feedback form
-*/
 .header {
   position: sticky;
   display: flex;
